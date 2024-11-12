@@ -4,7 +4,6 @@ const useScore = () => {
   const [score, setScore] = useState(0);
 
   const incrementScore = () => {
-    console.log('Incrementing score');
     setScore(prevScore => prevScore + 1);
   };
 
