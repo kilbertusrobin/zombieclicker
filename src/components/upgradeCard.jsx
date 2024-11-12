@@ -8,12 +8,11 @@ const UpgradeCard = ({ name, image, initialPrice, initialQuantity, incomeRate, s
         updateQuantity(quantity);
     }, [quantity, updateQuantity]);
 
-    // Définir la classe à appliquer en fonction des conditions
     let cardClasses = '';
     if (quantity === 0 && score < price) {
-        cardClasses = 'blur-sm'; // Appliquer le flou si quantité = 0 et score insuffisant
+        cardClasses = 'blur-sm';
     } else if (quantity > 0 && score < price) {
-        cardClasses = 'opacity-50'; // Appliquer le grisé si la quantité > 0 mais score insuffisant
+        cardClasses = 'opacity-50';
     }
 
     return (

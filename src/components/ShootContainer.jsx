@@ -3,14 +3,7 @@ import ShowShoot from './ShowShoot';
 import usePewPositions from './../hooks/usePewPositions';
 import PewEffect from './PewEffect';
 
-const ShootContainer = ({ onZombieClick, npm }) => {
-  if (!npm) {
-    npm = 0;
-  }
-  if (npm > 15) {
-    npm = 15;
-  }
-  
+const ShootContainer = ({ onZombieClick, npmBonk, npmPew, npmBoom, npmKaboom }) => {
   const { pewPositions, handleShoot } = usePewPositions();
 
   return (
@@ -23,10 +16,10 @@ const ShootContainer = ({ onZombieClick, npm }) => {
       style={{ position: 'relative' }}
     >
       <div style={{ position: 'absolute', width: '100%', height: '100%' }}>
-        <ShowShoot npm={npm} type="bonk" />
-        <ShowShoot npm={npm} type="pew" />
-        <ShowShoot npm={npm} type="boom" />
-        <ShowShoot npm={npm} type="kaboom" />
+        <ShowShoot npm={npmBonk} type="bonk" />
+        <ShowShoot npm={npmPew} type="pew" />
+        <ShowShoot npm={npmBoom} type="boom" />
+        <ShowShoot npm={npmKaboom} type="kaboom" />
       </div>
       <PewEffect pewPositions={pewPositions} />
     </div>
