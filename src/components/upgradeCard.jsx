@@ -8,19 +8,29 @@ const UpgradeCard = ({ name, image, initialPrice, initialQuantity, incomeRate, s
         updateQuantity(quantity);
     }, [quantity, updateQuantity]);
 
+    // Définir la classe à appliquer en fonction des conditions
+    let cardClasses = '';
+    if (quantity === 0 && score < price) {
+        cardClasses = 'blur-sm'; // Appliquer le flou si quantité = 0 et score insuffisant
+    } else if (quantity > 0 && score < price) {
+        cardClasses = 'opacity-50'; // Appliquer le grisé si la quantité > 0 mais score insuffisant
+    }
+
     return (
-        <div onClick={handleClick} className="flex flex-row items-center border-b justify-between px-6 py-7 cursor-pointer base-cursor">
-            <div className="flex flex-row gap-6 items-center">
-                <div className="flex flex-col">
-                    <img className='w-16 h-full' src={image} alt={name} />
+        <div className={`w-full h-auto ${cardClasses}`}>
+            <div onClick={handleClick} className="flex flex-row items-center border-b justify-between px-6 py-7 cursor-pointer base-cursor">
+                <div className="flex flex-row gap-6 items-center">
+                    <div className="flex flex-col">
+                        <img className='w-16 h-full' src={image} alt={name} />
+                    </div>
+                    <div className="flex flex-col">
+                        <h2 className='text-2xl'>{name}</h2>
+                        <p>Price: {price.toFixed(0)} Headshots</p>
+                        <p>Income: {incomeRate} Headshots/sec</p>
+                    </div>
                 </div>
-                <div className="flex flex-col">
-                    <h2 className='text-2xl'>{name}</h2>
-                    <p>Price: {price.toFixed(0)} Headshots</p>
-                    <p>Income: {incomeRate} Headshots/sec</p>
-                </div>
+                <p className='text-2xl'>{quantity}</p>
             </div>
-            <p className='text-2xl'>{quantity}</p>
         </div>
     );
 };
