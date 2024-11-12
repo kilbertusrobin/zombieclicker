@@ -9,7 +9,7 @@ const useUpgradeCard = (initialPrice, initialQuantity, incomeRate, score, setSco
         if (score >= price) {
             setScore(prevScore => prevScore - price);
             setQuantity(prevQuantity => prevQuantity + 1);
-            setPrice(prevPrice => Math.round(prevPrice * 1.025));
+            setPrice(prevPrice => Math.round(prevPrice * 1.250));
         }
     };
 
