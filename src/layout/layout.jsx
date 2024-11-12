@@ -21,7 +21,7 @@ const Layout = () => {
       </div>
       <div className="flex-1 flex flex-col bg-green-500 h-full">
         <div className='w-full h-1/2'>
-          <ScoreContainer score={score} />
+          <ScoreContainer score={score} persecond={0}/>
         </div>
         <div className='w-full h-1/2'>
         </div>

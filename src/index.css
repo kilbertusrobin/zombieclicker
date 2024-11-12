@@ -14,6 +14,10 @@ body {
   cursor: url('/assets/base_cursor.png'), auto;
 }
 
+.base-cursor {
+  cursor: url('/assets/base_cursor.png'), auto;
+}
+
 .zombie:hover {
   cursor: url('/assets/cursor.png'), auto;
 }

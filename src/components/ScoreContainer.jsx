@@ -1,8 +1,8 @@
-const ScoreContainer = ({ score }) => {
+const ScoreContainer = ({ score, persecond }) => {
     return (
         <div className="score-container h-full w-full flex flex-col items-center justify-center">
-            <h1 className="creepster">{score} Headshot !!!</h1>
-            <p>Salopio va</p>
+            <h1 className="creepster text-3xl">{score} Headshots !!!</h1>
+            <p>{persecond} par secondes</p>
         </div>
     );
 };
