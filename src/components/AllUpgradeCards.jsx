@@ -1,4 +1,4 @@
-import UpgradeCard from "../components/UpgradeCard";
+import UpgradeCard from "./UpgradeCard";
 
 const AllUpgradeCards = () => {
     return (

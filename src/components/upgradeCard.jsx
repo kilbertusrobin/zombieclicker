@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useUpgradeCard from '../hooks/useUpgradeCard';
 
 const UpgradeCard = ({ name, image, initialPrice, initialQuantity }) => {
-    const [price, setPrice] = useState(initialPrice);
-    const [quantity, setQuantity] = useState(initialQuantity);
-
-    const handleClick = () => {
-        setPrice(prevPrice => prevPrice * 1.025);
-        setQuantity(prevQuantity => prevQuantity + 1);
-    };
+    const { price, quantity, handleClick } = useUpgradeCard(initialPrice, initialQuantity);
 
     return (
         <div onClick={handleClick} className="flex flex-row items-center border justify-between px-6 py-7 cursor-pointer">
