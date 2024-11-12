@@ -1,8 +1,8 @@
 import React from 'react';
 import useUpgradeCard from '../hooks/useUpgradeCard';
 
-const UpgradeCard = ({ name, image, initialPrice, initialQuantity }) => {
-    const { price, quantity, handleClick } = useUpgradeCard(initialPrice, initialQuantity);
+const UpgradeCard = ({ name, image, initialPrice, initialQuantity, score, setScore }) => {
+    const { price, quantity, handleClick } = useUpgradeCard(initialPrice, initialQuantity, score, setScore);
 
     return (
         <div onClick={handleClick} className="flex flex-row items-center border justify-between px-6 py-7 cursor-pointer">
