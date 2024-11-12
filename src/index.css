@@ -12,6 +12,11 @@ body {
   padding: 0;
   font-family: "Outfit", sans-serif;
   cursor: url('/assets/base_cursor.png'), auto;
+  color: white;
+}
+
+.bg-black {
+  background-color: #292929;
 }
 
 .base-cursor {

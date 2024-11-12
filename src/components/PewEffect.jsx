@@ -9,7 +9,7 @@ const PewEffect = ({ pewPositions }) => (
           position: 'absolute',
           left: `${position.x - 620}px`,
           top: `${position.y - 170}px`,
-          background: 'url(../assets/pew.png) no-repeat center center',
+          background: 'url(../assets/pewPlayer.png) no-repeat center center',
           width: '50px',
           height: '50px',
           backgroundSize: 'contain',

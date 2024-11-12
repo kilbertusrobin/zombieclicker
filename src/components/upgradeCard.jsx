@@ -11,7 +11,7 @@ const UpgradeCard = ({ name, image, initialPrice, initialQuantity, incomeRate, s
     }, [quantity, updateQuantity]);
 
     return (
-        <div onClick={handleClick} className="flex flex-row items-center border justify-between px-6 py-7 cursor-pointer base-cursor">
+        <div onClick={handleClick} className="flex flex-row items-center border-b justify-between px-6 py-7 cursor-pointer base-cursor">
             <div className="flex flex-row gap-6 items-center">
                 <div className="flex flex-col">
                     <img className='w-16 h-full' src={image} alt={name} />
