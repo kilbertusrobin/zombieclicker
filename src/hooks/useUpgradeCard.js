@@ -1,9 +1,12 @@
-// useUpgradeCard.js
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const useUpgradeCard = (initialPrice, initialQuantity, incomeRate, score, setScore) => {
+const useUpgradeCard = (initialPrice, initialQuantity, incomeRate, score, setScore, upgradeKey) => {
+    // Initialiser la quantité et le prix à partir du local storage ou des valeurs initiales
     const [price, setPrice] = useState(initialPrice);
-    const [quantity, setQuantity] = useState(initialQuantity);
+    const [quantity, setQuantity] = useState(() => {
+        const savedQuantity = localStorage.getItem(upgradeKey);
+        return savedQuantity ? parseInt(savedQuantity, 10) : initialQuantity;
+    });
 
     const handleClick = () => {
         if (score >= price) {
@@ -13,7 +16,11 @@ const useUpgradeCard = (initialPrice, initialQuantity, incomeRate, score, setSco
         }
     };
 
-    // Calcul du revenu pour cette carte en fonction de sa quantité
+    // Sauvegarder la quantité dans le local storage à chaque changement
+    useEffect(() => {
+        localStorage.setItem(upgradeKey, quantity);
+    }, [quantity, upgradeKey]);
+
     const income = quantity * incomeRate;
 
     return { price, quantity, income, handleClick };

@@ -1,11 +1,9 @@
-// UpgradeCard.js
 import React, { useEffect } from 'react';
 import useUpgradeCard from '../hooks/useUpgradeCard';
 
-const UpgradeCard = ({ name, image, initialPrice, initialQuantity, incomeRate, score, setScore, updateQuantity }) => {
-    const { price, quantity, income, handleClick } = useUpgradeCard(initialPrice, initialQuantity, incomeRate, score, setScore);
+const UpgradeCard = ({ name, image, initialPrice, initialQuantity, incomeRate, score, setScore, updateQuantity, upgradeKey }) => {
+    const { price, quantity, income, handleClick } = useUpgradeCard(initialPrice, initialQuantity, incomeRate, score, setScore, upgradeKey);
 
-    // Mise à jour de la quantité dans le parent lorsqu'elle change
     useEffect(() => {
         updateQuantity(quantity);
     }, [quantity, updateQuantity]);
