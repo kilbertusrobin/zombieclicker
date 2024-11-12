@@ -1,9 +1,9 @@
 import React from 'react';
 import ZombieContainer from '../components/zombieContainer';
-import UpgradeCard from "../components/UpgradeCard";
 import ScoreContainer from '../components/ScoreContainer';
 import useScore from '../hooks/useScore';
 import ShootContainer from '../components/ShootContainer';
+import AllUpgradeCards from "../components/AllUpgradeCards";
 
 const Layout = () => {
   const { score, incrementScore } = useScore();
@@ -11,13 +11,7 @@ const Layout = () => {
   return (
     <div className="relative flex h-full w-full">
       <div className="flex-1 bg-blue-500 h-100 overflow-y-auto">
-        <UpgradeCard name="Brute" image="/assets/batte.svg" initialPrice={30} initialQuantity={0}/>
-        <UpgradeCard name="Pistolero" image="/assets/pistolet.svg" initialPrice={250} initialQuantity={0}/>
-        <UpgradeCard name="Soldat" image="/assets/fusil.svg" initialPrice={1000} initialQuantity={0}/>
-        <UpgradeCard name="Commando" image="/assets/commando.svg" initialPrice={3000} initialQuantity={0}/>
-        <UpgradeCard name="Blindé" image="/assets/tank.svg" initialPrice={10000} initialQuantity={0}/>
-        <UpgradeCard name="Bombardier" image="/assets/bombardier.svg" initialPrice={50000} initialQuantity={0}/>
-        <UpgradeCard name="Annihilateur" image="/assets/annihilateur.svg" initialPrice={100000} initialQuantity={0}/>
+      <AllUpgradeCards/>
 
       </div>
       <div className="flex-[2_2_0%] relative bg-[url('/assets/zombie-bg.webp')] bg-cover h-full zombie">
