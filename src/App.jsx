@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <div className='bg-red-600 w-screen h-screen'>
+      <div className='w-screen h-screen'>
         <Layout />
       </div>
     </>
