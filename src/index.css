@@ -10,8 +10,12 @@
 body {
   margin: 0;
   padding: 0;
-  cursor: url('/assets/cursor.png'), auto;
   font-family: "Outfit", sans-serif;
+  cursor: url('/assets/base_cursor.png'), auto;
+}
+
+.zombie:hover {
+  cursor: url('/assets/cursor.png'), auto;
 }
 
 .outfit {

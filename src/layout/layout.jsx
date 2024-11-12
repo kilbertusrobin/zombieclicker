@@ -20,7 +20,7 @@ const Layout = () => {
         <UpgradeCard name="Annihilateur" image="/assets/annihilateur.svg" initialPrice={100000} initialQuantity={0}/>
 
       </div>
-      <div className="flex-[2_2_0%] bg-[url('/assets/zombie-bg.webp')] bg-cover h-full">
+      <div className="flex-[2_2_0%] bg-[url('/assets/zombie-bg.webp')] bg-cover h-full zombie">
         <ZombieContainer/>
       </div>
       <div className="flex-1 flex flex-col bg-green-500 h-full">
@@ -30,7 +30,7 @@ const Layout = () => {
         <div className='w-full h-1/2'>
         </div>
       </div>
-      <div className='w-48 h-48 rounded-lg absolute border top-36 left-[38rem] border-red-500'>
+      <div className='w-48 h-48 rounded-lg absolute border top-36 left-[38rem] border-red-500 zombie'>
         <ShootContainer onZombieClick={incrementScore} />
       </div>
     </div>
