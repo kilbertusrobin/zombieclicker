@@ -1,5 +1,6 @@
 import React from 'react';
 import ZombieContainer from '../components/zombieContainer';
+import UpgradeCard from "../components/upgradeCard";
 import ScoreContainer from '../components/ScoreContainer';
 const Layout = () => {
 
@@ -15,7 +16,9 @@ const Layout = () => {
         </div>
         <div className='w-full h-1/2'></div>
       </div>
-      <div className='w-48 h-48 rounded-lg absolute border top-36 left-[38rem] border-red-500'></div>
+      <div className='w-48 h-48 rounded-lg absolute border top-36 left-[38rem] border-red-500'>
+x      <UpgradeCard name="Soldat" image="/assets/cursor.png" price="100" quantity="1"/>
+      </div>
     </div>
   );
 };
