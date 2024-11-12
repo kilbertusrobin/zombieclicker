@@ -1,18 +1,22 @@
+// useUpgradeCard.js
 import { useState } from 'react';
 
-const useUpgradeCard = (initialPrice, initialQuantity, score, setScore) => {
+const useUpgradeCard = (initialPrice, initialQuantity, incomeRate, score, setScore) => {
     const [price, setPrice] = useState(initialPrice);
     const [quantity, setQuantity] = useState(initialQuantity);
 
     const handleClick = () => {
         if (score >= price) {
-            setPrice(prevPrice => Math.round(prevPrice * 1.025));
-            setQuantity(prevQuantity => prevQuantity + 1);
             setScore(prevScore => prevScore - price);
+            setQuantity(prevQuantity => prevQuantity + 1);
+            setPrice(prevPrice => Math.round(prevPrice * 1.025));
         }
     };
 
-    return { price, quantity, handleClick };
+    // Calcul du revenu pour cette carte en fonction de sa quantité
+    const income = quantity * incomeRate;
+
+    return { price, quantity, income, handleClick };
 };
 
 export default useUpgradeCard;
