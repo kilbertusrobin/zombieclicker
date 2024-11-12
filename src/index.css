@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+* {
+  user-select: none; 
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -17,3 +21,4 @@ body {
 .creepster {
   font-family: "Creepster", system-ui;
 }
+
