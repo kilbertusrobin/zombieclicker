@@ -1,5 +1,5 @@
 import React from 'react';
-import ShowBonk from './ShowBonk';
+import ShowShoot from './ShowShoot';
 import usePewPositions from './../hooks/usePewPositions';
 import PewEffect from './PewEffect';
 
@@ -15,7 +15,7 @@ const ShootContainer = ({ onZombieClick }) => {
       }}
       style={{ position: 'relative' }}
     >
-      <ShowBonk npm={7.5} />
+      <ShowShoot npm={7.5} type={"bonk"} />
       <PewEffect pewPositions={pewPositions} />
     </div>
   );

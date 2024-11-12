@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useBonkPositions = (npm, containerWidth, containerHeight) => {
+const useShootPositions = (npm, containerWidth, containerHeight) => {
   const [bonkPositions, setBonkPositions] = useState([]);
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const useBonkPositions = (npm, containerWidth, containerHeight) => {
   return bonkPositions;
 };
 
-export default useBonkPositions;
+export default useShootPositions;
