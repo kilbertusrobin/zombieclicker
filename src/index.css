@@ -4,7 +4,7 @@
 
 
 * {
-  user-select: none; 
+  user-select: none;
 }
 
 body {
@@ -51,4 +51,46 @@ body {
 
 ::-webkit-scrollbar-button {
   display: none;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.zoom-in {
+  animation: zoomIn 0.5s forwards;
+}
+
+.zoom-out {
+  animation: zoomOut 0.5s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
 }
