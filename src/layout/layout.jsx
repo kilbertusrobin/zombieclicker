@@ -1,9 +1,11 @@
+// src/components/Layout.js
 import React, { useEffect, useRef, useState } from 'react';
 import ZombieContainer from '../components/ZombieContainer';
 import ScoreContainer from '../components/ScoreContainer';
-import useScore from '../hooks/useScore';
 import ShootContainer from '../components/ShootContainer';
 import AllUpgradeCards from "../components/AllUpgradeCards";
+import StatsContainer from '../components/StatsContainer'; // Import the new StatsContainer
+import useScore from '../hooks/useScore';
 import useProjectiles from '../hooks/useProjectiles';
 
 const Layout = () => {
@@ -40,7 +42,6 @@ const Layout = () => {
       setShowSecretDiv(true);
       setZoomClass('zoom-in');
 
-      // Après 1.1 seconde, cacher la pluie, puis après 2.1 secondes, lancer le zoom out
       setTimeout(() => setHideRain(true), 1000);
       setTimeout(() => {
         setZoomClass('zoom-out');
@@ -100,15 +101,7 @@ const Layout = () => {
         <div className='w-full h-1/2'>
           <ScoreContainer score={score} persecond={upgradeRefs.current.reduce((acc, { incomeRate, quantity }) => acc + incomeRate * quantity, 0)} />
         </div>
-      </div>
-
-      {/* Div secrète avec animations de zoom et disparition de la pluie */}
-      <div className={`absolute top-0 left-0 ${showSecretDiv ? 'flex' : 'hidden'} justify-center items-center w-full h-full`}>
-        <div className='w-full h-full relative flex items-start justify-center overflow-hidden'>
-          <img src='./assets/pluie.gif' className={`h-full w-full z-10 absolute ${hideRain ? 'fade-out' : ''}`} alt='pluie' />
-          <h1 className={`z-30 ${zoomClass} mt-20 text-4xl text-red`}>LA VALISE MOBILE</h1>
-          <img src='/assets/valise.gif' className={`h-full z-25 absolute ${zoomClass}`} alt='valise' />
-        </div>
+        <StatsContainer /> {/* Add the new StatsContainer here */}
       </div>
     </div>
   );
