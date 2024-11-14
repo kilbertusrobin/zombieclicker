@@ -1,9 +1,11 @@
+// src/components/Layout.js
 import React, { useEffect, useRef, useState } from 'react';
 import ZombieContainer from '../components/ZombieContainer';
 import ScoreContainer from '../components/ScoreContainer';
-import useScore from '../hooks/useScore';
 import ShootContainer from '../components/ShootContainer';
 import AllUpgradeCards from "../components/AllUpgradeCards";
+import StatsContainer from '../components/StatsContainer'; // Import the new StatsContainer
+import useScore from '../hooks/useScore';
 import useProjectiles from '../hooks/useProjectiles';
 
 const Layout = () => {
@@ -40,7 +42,6 @@ const Layout = () => {
       setShowSecretDiv(true);
       setZoomClass('zoom-in');
 
-      // Après 1.1 seconde, cacher la pluie, puis après 2.1 secondes, lancer le zoom out
       setTimeout(() => setHideRain(true), 1000);
       setTimeout(() => {
         setZoomClass('zoom-out');
@@ -100,6 +101,7 @@ const Layout = () => {
         <div className='w-full h-1/2'>
           <ScoreContainer score={score} persecond={upgradeRefs.current.reduce((acc, { incomeRate, quantity }) => acc + incomeRate * quantity, 0)} />
         </div>
+        <StatsContainer /> {/* Add the new StatsContainer here */}
       </div>
 
       {/* Div secrète avec animations de zoom et disparition de la pluie */}
