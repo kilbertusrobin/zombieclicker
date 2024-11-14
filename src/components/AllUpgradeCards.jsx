@@ -1,7 +1,9 @@
-import React, { useCallback } from 'react';
+import React, {useCallback } from 'react';
 import UpgradeCard from "./upgradeCard";
 
 const AllUpgradeCards = ({ score, setScore, updateUpgradeQuantity }) => {
+    
+
     return (
         <>
             <UpgradeCard name="Brute" image="/assets/batte.svg" initialPrice={50} initialQuantity={0} incomeRate={1} score={score} setScore={setScore} updateQuantity={useCallback((quantity) => updateUpgradeQuantity(0, quantity), [updateUpgradeQuantity])} upgradeKey="upgrade_0" />
