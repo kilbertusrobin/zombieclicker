@@ -14,12 +14,12 @@ const Layout = () => {
 
   const upgradeRefs = useRef([
     { incomeRate: 1, quantity: 0 },
-    { incomeRate: 5, quantity: 0 },
-    { incomeRate: 25, quantity: 0 },
+    { incomeRate: 10, quantity: 0 },
     { incomeRate: 50, quantity: 0 },
-    { incomeRate: 125, quantity: 0 },
+    { incomeRate: 100, quantity: 0 },
     { incomeRate: 250, quantity: 0 },
     { incomeRate: 500, quantity: 0 },
+    { incomeRate: 1000, quantity: 0 },
   ]);
 
   const updateUpgradeQuantity = (index, quantity) => {
