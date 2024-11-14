@@ -18,7 +18,7 @@ const ValiseUpgraderContainer = ({ onUpgrade, currentSpeed }) => {
                 />
                 <UpgradeValise
                     title={"Crier \"En avant !\" "}
-                    distancePrice={0.5}
+                    distancePrice={0.2}
                     income={2}
                     cap={'30'}
                     img={'bonk.png'}
@@ -27,8 +27,8 @@ const ValiseUpgraderContainer = ({ onUpgrade, currentSpeed }) => {
                 />
                 <UpgradeValise
                     title={"Crier \"Plus vite !\" "}
-                    distancePrice={5}
-                    income={0.2}
+                    distancePrice={0.5}
+                    income={5}
                     cap={'45'}
                     img={'bonk.png'}
                     onUpgrade={onUpgrade}
@@ -36,8 +36,8 @@ const ValiseUpgraderContainer = ({ onUpgrade, currentSpeed }) => {
                 />
                 <UpgradeValise
                     title={"Plus jolie valise"}
-                    distancePrice={5}
-                    income={0.2}
+                    distancePrice={0.75}
+                    income={10}
                     cap={'59.9'}
                     img={'bonk.png'}
                     onUpgrade={onUpgrade}
@@ -45,8 +45,8 @@ const ValiseUpgraderContainer = ({ onUpgrade, currentSpeed }) => {
                 />
                 <UpgradeValise
                     title={"Moteur à explosion"}
-                    distancePrice={5}
-                    income={0.2}
+                    distancePrice={1}
+                    income={0}
                     cap={'win'}
                     img={'pew.png'}
                     onUpgrade={onUpgrade}
