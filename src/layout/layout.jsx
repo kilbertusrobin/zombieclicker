@@ -1,16 +1,17 @@
-// src/components/Layout.js
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ZombieContainer from '../components/ZombieContainer';
 import ScoreContainer from '../components/ScoreContainer';
 import ShootContainer from '../components/ShootContainer';
 import AllUpgradeCards from "../components/AllUpgradeCards";
-import StatsContainer from '../components/StatsContainer'; // Import the new StatsContainer
+import StatsContainer from '../components/StatsContainer';
 import useScore from '../hooks/useScore';
 import useProjectiles from '../hooks/useProjectiles';
 
 const Layout = () => {
   const { score, incrementScore, setScore } = useScore();
   const { projectiles, addProjectile } = useProjectiles();
+  const navigate = useNavigate();
 
   const [showSecretDiv, setShowSecretDiv] = useState(false);
   const [zoomClass, setZoomClass] = useState('');
@@ -48,6 +49,7 @@ const Layout = () => {
         setTimeout(() => {
           setShowSecretDiv(false);
           setHideRain(false);
+          navigate('/valise'); // Redirection vers /valise
         }, 1000);
       }, 1100);
     }
@@ -101,7 +103,7 @@ const Layout = () => {
         <div className='w-full h-1/2'>
           <ScoreContainer score={score} persecond={upgradeRefs.current.reduce((acc, { incomeRate, quantity }) => acc + incomeRate * quantity, 0)} />
         </div>
-        <StatsContainer /> {/* Add the new StatsContainer here */}
+        <StatsContainer />
       </div>
 
       {/* Div secrète avec animations de zoom et disparition de la pluie */}
