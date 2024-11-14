@@ -1,4 +1,5 @@
 import ValiseVisualContainer from "../components/ValiseVisualContainer";
+import ValiseUpgraderContainer from "../components/ValiseUpgraderContainer";
 const LayoutValise = () => {
 
   return (
@@ -7,6 +8,7 @@ const LayoutValise = () => {
             <ValiseVisualContainer />
         </div>        
         <div className="w-1/2 h-full bg-red-500">
+            <ValiseUpgraderContainer />
         </div>
     </div>
   );
