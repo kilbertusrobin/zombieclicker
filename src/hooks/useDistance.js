@@ -1,18 +1,13 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
-const useDistance = (speed) => {
-    const [distance, setDistance] = useState(0);
-
+const useDistance = (speed, updateDistance) => {
     useEffect(() => {
         const interval = setInterval(() => {
-            setDistance(prevDistance => Math.round((prevDistance + (speed / 3600)) * 1000) / 1000);
+            updateDistance(prevDistance => Math.round((prevDistance + (speed / 3600)) * 1000) / 1000);
         }, 1000);
 
         return () => clearInterval(interval);
-    }, [speed]);
-
-    return distance;
+    }, [speed, updateDistance]);
 };
-
 
 export default useDistance;
