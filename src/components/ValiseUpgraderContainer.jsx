@@ -1,15 +1,15 @@
 import UpgradeValise from "./UpgradeValise";
 
-const ValiseUpgraderContainer = () => {
+const ValiseUpgraderContainer = ({ onUpgrade }) => {
     return (
         <div className="w-full h-full bg-[#6b4db2] flex flex-col">
             <h1 className="text-2xl text-center font-bold text-white mt-10 mb-10">Essaye d'atteindre les 60km/h (moteur à explosion)</h1>
             <div className="w-full h-auto items-center flex flex-col">
-                <UpgradeValise title={"Petit moteur"} price={5} income={0.2} cap={'10'} img={'bonk.png'}/>
-                <UpgradeValise title={"Crier \"En avant !\" "} price={5} income={0.2} cap={'30'} img={'bonk.png'} />
-                <UpgradeValise title={"Crier \"Plus vite !\" "} price={5} income={0.2} cap={'45'} img={'bonk.png'} />
-                <UpgradeValise title={"Plus jolie valise"} price={5} income={0.2} cap={'59,9'} img={'bonk.png'} />
-                <UpgradeValise title={"Moteur à explosion"} price={5} income={0.2} cap={'win'} img={'pew.png'} />
+                <UpgradeValise title={"Petit moteur"} distancePrice={0.02} income={1} cap={'10'} img={'bonk.png'} onUpgrade={onUpgrade} />
+                <UpgradeValise title={"Crier \"En avant !\" "} distancePrice={0.5} income={2} cap={'30'} img={'bonk.png'} onUpgrade={onUpgrade} />
+                <UpgradeValise title={"Crier \"Plus vite !\" "} distancePrice={5} income={0.2} cap={'45'} img={'bonk.png'} onUpgrade={onUpgrade} />
+                <UpgradeValise title={"Plus jolie valise"} distancePrice={5} income={0.2} cap={'59,9'} img={'bonk.png'} onUpgrade={onUpgrade} />
+                <UpgradeValise title={"Moteur à explosion"} distancePrice={5} income={0.2} cap={'win'} img={'pew.png'} onUpgrade={onUpgrade} />
             </div>
         </div>
     );

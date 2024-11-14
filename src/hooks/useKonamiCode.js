@@ -30,7 +30,7 @@ const useKonamiCode = () => {
           setShowSecretDiv(false);
           setHideRain(false);
           navigate('/valise'); // Redirection vers /valise
-        }, 1000);
+        }, 500);
       }, 1100);
     }
   };
