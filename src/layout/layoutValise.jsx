@@ -4,12 +4,10 @@ import ValiseUpgraderContainer from "../components/ValiseUpgraderContainer";
 import useDistance from "../hooks/useDistance";
 
 const LayoutValise = () => {
-    // Récupération des valeurs depuis le Local Storage, avec valeurs par défaut
     const [speed, setSpeed] = useState(() => parseFloat(localStorage.getItem('speed')) || 2);
     const [distance, setDistance] = useState(() => parseFloat(localStorage.getItem('distance')) || 0);
     const [purchaseCount, setPurchaseCount] = useState(() => parseInt(localStorage.getItem('purchaseCount')) || 0);
 
-    // Sauvegarde des données dans le Local Storage
     const saveToLocalStorage = (key, value) => {
         localStorage.setItem(key, value);
     };
@@ -26,7 +24,6 @@ const LayoutValise = () => {
         saveToLocalStorage('purchaseCount', purchaseCount);
     }, [purchaseCount]);
 
-    // Fonction pour gérer l'upgrade
     const handleUpgrade = (price, income, cap) => {
         if (distance >= price && (cap === 'win' || speed < parseFloat(cap))) {
             setDistance(prevDistance => Math.round((prevDistance - price) * 1000) / 1000);
@@ -35,7 +32,6 @@ const LayoutValise = () => {
         }
     };
 
-    // Hook useDistance pour mettre à jour la distance en fonction de la vitesse
     useDistance(speed, setDistance);
 
     return (

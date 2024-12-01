@@ -1,4 +1,3 @@
-// src/hooks/useGameStats.js
 import { useState, useEffect } from 'react';
 import useScore from './useScore';
 import useUpgradeCard from './useUpgradeCard';
@@ -26,11 +25,10 @@ const useGameStats = () => {
     localStorage.clear();
     setScore(0);
     setTotalTimePlayed(0);
-    // Reset all upgrade quantities to 0 in localStorage
     for (let i = 0; i <= 6; i++) {
       localStorage.setItem(`upgrade_${i}`, 0);
     }
-    window.location.reload(); // Refresh to apply reset state
+    window.location.reload();
   };
 
   return { score, totalTimePlayed, resetGame };

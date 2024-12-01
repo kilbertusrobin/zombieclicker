@@ -3,7 +3,6 @@ import React from 'react';
 const UpgradeValise = ({ title, distancePrice, income, cap, img, onUpgrade, currentSpeed }) => {
     const formattedCap = cap !== 'win' ? `${cap} km/h` : 'win';
 
-    // Vérification si l'upgrade est toujours disponible (en fonction du cap)
     const isAvailable = cap === 'win' || currentSpeed < parseFloat(cap);
 
     const handleClick = () => {
