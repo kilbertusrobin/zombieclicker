@@ -13,7 +13,7 @@ const ValiseUpgraderContainer = ({ onUpgrade, currentSpeed }) => {
                     distancePrice={0.02}
                     income={1}
                     cap={'10'}
-                    img={'bonk.png'}
+                    img={'valise1.png'}
                     onUpgrade={onUpgrade}
                     currentSpeed={currentSpeed}
                 />
@@ -23,7 +23,7 @@ const ValiseUpgraderContainer = ({ onUpgrade, currentSpeed }) => {
                     distancePrice={0.2}
                     income={2}
                     cap={'30'}
-                    img={'bonk.png'}
+                    img={'EnAvant.png'}
                     onUpgrade={onUpgrade}
                     currentSpeed={currentSpeed}
                 />
@@ -33,7 +33,7 @@ const ValiseUpgraderContainer = ({ onUpgrade, currentSpeed }) => {
                     distancePrice={0.5}
                     income={5}
                     cap={'45'}
-                    img={'bonk.png'}
+                    img={'PlusVite.png'}
                     onUpgrade={onUpgrade}
                     currentSpeed={currentSpeed}
                 />
@@ -43,7 +43,7 @@ const ValiseUpgraderContainer = ({ onUpgrade, currentSpeed }) => {
                     distancePrice={0.75}
                     income={10}
                     cap={'59.9'}
-                    img={'bonk.png'}
+                    img={'valiseChic.png'}
                     onUpgrade={onUpgrade}
                     currentSpeed={currentSpeed}
                 />
@@ -53,7 +53,7 @@ const ValiseUpgraderContainer = ({ onUpgrade, currentSpeed }) => {
                     distancePrice={1}
                     income={0}
                     cap={'win'}
-                    img={'pew.png'}
+                    img={'valiseMoteur.png'}
                     onUpgrade={onUpgrade}
                     currentSpeed={currentSpeed}
                 />
