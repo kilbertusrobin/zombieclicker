@@ -1,10 +1,13 @@
 import React from 'react';
 
 const UpgradeValise = ({ title, distancePrice, income, cap, img, onUpgrade, currentSpeed }) => {
+    // Formater le cap pour l'affichage
     const formattedCap = cap !== 'win' ? `${cap} km/h` : 'win';
 
+    // Vérifier si l'amélioration est disponible
     const isAvailable = cap === 'win' || currentSpeed < parseFloat(cap);
 
+    // Gérer le clic sur l'amélioration
     const handleClick = () => {
         if (isAvailable) {
             onUpgrade(distancePrice, income, cap);

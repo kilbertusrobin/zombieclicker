@@ -4,6 +4,7 @@ import useGameStats from '../hooks/useGameStats';
 const StatsContainer = () => {
   const { totalTimePlayed, resetGame } = useGameStats();
 
+  // Fonction pour formater le temps en heures, minutes et secondes
   const formatTime = (seconds) => {
     const hrs = Math.floor(seconds / 3600);
     const mins = Math.floor((seconds % 3600) / 60);

@@ -7,6 +7,7 @@ const ValiseUpgraderContainer = ({ onUpgrade, currentSpeed }) => {
                 Essaye d'atteindre les 60km/h (moteur à explosion)
             </h1>
             <div className="w-full h-auto items-center flex flex-col">
+                {/* Composant pour l'amélioration "Petit moteur" */}
                 <UpgradeValise
                     title={"Petit moteur"}
                     distancePrice={0.02}
@@ -16,6 +17,7 @@ const ValiseUpgraderContainer = ({ onUpgrade, currentSpeed }) => {
                     onUpgrade={onUpgrade}
                     currentSpeed={currentSpeed}
                 />
+                {/* Composant pour l'amélioration "Crier 'En avant !'" */}
                 <UpgradeValise
                     title={"Crier \"En avant !\" "}
                     distancePrice={0.2}
@@ -25,6 +27,7 @@ const ValiseUpgraderContainer = ({ onUpgrade, currentSpeed }) => {
                     onUpgrade={onUpgrade}
                     currentSpeed={currentSpeed}
                 />
+                {/* Composant pour l'amélioration "Crier 'Plus vite !'" */}
                 <UpgradeValise
                     title={"Crier \"Plus vite !\" "}
                     distancePrice={0.5}
@@ -34,6 +37,7 @@ const ValiseUpgraderContainer = ({ onUpgrade, currentSpeed }) => {
                     onUpgrade={onUpgrade}
                     currentSpeed={currentSpeed}
                 />
+                {/* Composant pour l'amélioration "Plus jolie valise" */}
                 <UpgradeValise
                     title={"Plus jolie valise"}
                     distancePrice={0.75}
@@ -43,6 +47,7 @@ const ValiseUpgraderContainer = ({ onUpgrade, currentSpeed }) => {
                     onUpgrade={onUpgrade}
                     currentSpeed={currentSpeed}
                 />
+                {/* Composant pour l'amélioration "Moteur à explosion" */}
                 <UpgradeValise
                     title={"Moteur à explosion"}
                     distancePrice={1}

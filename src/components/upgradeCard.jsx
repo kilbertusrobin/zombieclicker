@@ -4,10 +4,12 @@ import useUpgradeCard from '../hooks/useUpgradeCard';
 const UpgradeCard = ({ name, image, initialPrice, initialQuantity, incomeRate, score, setScore, updateQuantity, upgradeKey }) => {
     const { price, quantity, income, handleClick } = useUpgradeCard(initialPrice, initialQuantity, incomeRate, score, setScore, upgradeKey);
 
+    // Mettre à jour la quantité d'améliorations lorsque la quantité change
     useEffect(() => {
         updateQuantity(quantity);
     }, [quantity, updateQuantity]);
 
+    // Définir les classes CSS pour la carte en fonction de la quantité et du score
     let cardClasses = '';
     if (quantity === 0 && score < price) {
         cardClasses = 'blur-sm';

@@ -6,12 +6,15 @@ import useKonamiCode from '../hooks/useKonamiCode';
 import GameLayout from '../components/GameLayout';
 
 const Layout = () => {
+  // Utilisation des hooks personnalisés pour gérer le score, les projectiles et le code Konami
   const { score, incrementScore, setScore } = useScore();
   const { projectiles, addProjectile } = useProjectiles();
   const navigate = useNavigate();
 
+  // Utilisation du hook personnalisé pour le code Konami
   const { showSecretDiv, zoomClass, hideRain } = useKonamiCode();
 
+  // Références aux objets d'amélioration avec les taux de revenu et les quantités
   const upgradeRefs = useRef([
     { incomeRate: 1, quantity: 0 },
     { incomeRate: 10, quantity: 0 },
@@ -22,10 +25,12 @@ const Layout = () => {
     { incomeRate: 1000, quantity: 0 },
   ]);
 
+  // Fonction pour mettre à jour la quantité d'améliorations et ajouter des projectiles en fonction de l'index de l'amélioration
   const updateUpgradeQuantity = (index, quantity) => {
     const previousQuantity = upgradeRefs.current[index].quantity;
     upgradeRefs.current[index].quantity = quantity;
 
+    // Ajouter des projectiles si la quantité augmente
     if (quantity > previousQuantity) {
       if (index === 0) addProjectile('bonk');
       if ([1, 2].includes(index)) addProjectile('pew');
@@ -34,6 +39,7 @@ const Layout = () => {
     }
   };
 
+  // useEffect pour mettre à jour le score en fonction du revenu total des améliorations toutes les secondes
   useEffect(() => {
     const interval = setInterval(() => {
       const totalIncome = upgradeRefs.current.reduce(
@@ -43,6 +49,7 @@ const Layout = () => {
       setScore(prevScore => prevScore + totalIncome);
     }, 1000);
 
+    // Nettoyer l'intervalle lorsque le composant est démonté
     return () => clearInterval(interval);
   }, [setScore]);
 
